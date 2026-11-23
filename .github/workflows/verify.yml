@@ -96,7 +96,7 @@ jobs:
         fetch-depth: 0
         ref: ${{ needs.paths-filter.outputs.ref || inputs.ref || github.sha }}
         persist-credentials: false
-    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+    - uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5
       with:
         go-version-file: go.mod
         cache-dependency-path: '**/go.sum'
@@ -170,7 +170,7 @@ jobs:
       with:
         ref: ${{ needs.paths-filter.outputs.ref || inputs.ref || github.sha }}
         persist-credentials: false
-    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+    - uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5
       with:
         go-version-file: go.mod
         cache-dependency-path: '**/go.sum'
@@ -209,7 +209,7 @@ jobs:
         fetch-depth: 0
         ref: ${{ needs.paths-filter.outputs.ref || inputs.ref || github.sha }}
         persist-credentials: false
-    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+    - uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5
       with:
         go-version-file: go.mod
         cache-dependency-path: '**/go.sum'
@@ -274,7 +274,7 @@ jobs:
         fetch-depth: 0
         ref: ${{ needs.paths-filter.outputs.ref || inputs.ref || github.sha }}
         persist-credentials: false
-    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+    - uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5
       with:
         go-version-file: go.mod
         cache-dependency-path: '**/go.sum'
@@ -321,7 +321,7 @@ jobs:
       with:
         persist-credentials: false
         ref: ${{ needs.paths-filter.outputs.ref || inputs.ref || github.sha }}
-    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+    - uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5
       with:
         go-version-file: go.mod
         cache-dependency-path: '**/go.sum'
@@ -449,7 +449,7 @@ jobs:
         syft "registry:$image" --output spdx-json=sbom.spdx.json
     - name: Reject critical vulnerabilities with an available fix
       run: bash scripts/scan_image.sh "registry:$IMAGE"
-    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+    - uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5
       with:
         go-version-file: tools/cosign/go.mod
         cache-dependency-path: tools/cosign/go.sum
